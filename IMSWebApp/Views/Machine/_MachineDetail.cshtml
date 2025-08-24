@@ -1,0 +1,55 @@
+﻿@model IMSWebApp.Models.TMMachine
+
+<div class="container mt-2">
+    <div class="card mb-2">
+        <div class="card-header">
+            <h5 class="card-title">Machine Code: @Model.MachineName</h5>
+        </div>
+        <div class="card-body">
+            <!-- Plant Code -->
+            <div class="form-group row">
+                <label for="PlantCode" class="col-sm-2 col-form-label">Plant</label>
+                <div class="col-sm-10">
+                    <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@Model.PlantCode</label>
+                </div>
+            </div>
+
+            <!-- Machine Name -->
+            <div class="form-group row">
+                <label for="MachineName" class="col-sm-2 col-form-label">Machine</label>
+                <div class="col-sm-10">
+                    <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@Model.MachineName</label>
+                </div>
+            </div>
+
+            <!-- Buy Date and Maintenance Date in a single row -->
+            <div class="form-group row">
+                <!-- Buy Date -->
+                <label for="BuyDate" class="col-sm-2 col-form-label">Buy Date</label>
+                <div class="col-sm-3">
+                    <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">
+                        @Model.BuyDate?.ToString("yyyy-MM-dd") 
+                    </label>
+                </div>
+
+                <!-- Maintenance Date -->
+                <label for="MaintDate" class="col-sm-4 col-form-label">Maintenance Date</label>
+                <div class="col-sm-3">
+                    <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">
+                        @Model.MaintDate?.ToString("yyyy-MM-dd") 
+                    </label>
+                </div>
+            </div>
+
+            <!-- Usage -->
+            <div class="form-group row">
+                <label for="Usage" class="col-sm-2 col-form-label">Usage</label>
+                <div class="col-sm-10">
+                    <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">
+                        @Model.Usage?.ToString("F2")
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

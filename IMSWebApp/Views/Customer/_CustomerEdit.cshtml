@@ -1,0 +1,155 @@
+﻿@model IMSWebApp.Models.CustomerList
+
+<div class="container mt-1">
+    <form class="form-horizontal" id="editCustomerForm" method="POST">
+        <input type="hidden" id="hdnCustType" value="@Model.CustType" />
+        <input type="hidden" id="hdnCustSubType" value="@Model.CustSubType" />
+        <input type="hidden" id="hdnArea" value="@Model.Area" />
+        <input type="hidden" id="hdnSalesman" value="@Model.Salesman" />
+
+        <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+        <input type="hidden" id="BussCode" name="BussCode" value="@Model.BussCode" />
+        <input type="hidden" id="PlantCode" name="PlantCode" value="@Model.PlantCode" />
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label for="CustCode" class="col-sm-4 col-form-label">Customer Code</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="CustCode" name="CustCode" class="form-control col-sm-5" value="@Model.CustCode" readonly />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="CustName" class="col-sm-4 col-form-label">Customer Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="CustName" name="CustName" class="form-control" value="@Model.CustName" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="CustAddress" class="col-sm-4 col-form-label">Address</label>
+                    <div class="col-sm-8">
+                        <textarea id="CustAddress" name="CustAddress" class="form-control" rows="3" required>@Model.CustAddress</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="City" class="col-sm-4 col-form-label">City</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="City" name="City" class="form-control" value="@Model.City" required />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Phone" class="col-sm-4 col-form-label">Phone</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="Phone" name="Phone" class="form-control" value="@Model.Phone" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Email" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-8">
+                        <input type="email" id="Email" name="Email" class="form-control" value="@Model.Email" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="OwnerName" class="col-sm-4 col-form-label">Owner Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="OwnerName" name="OwnerName" class="form-control" value="@Model.OwnerName" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="TaxName" class="col-sm-4 col-form-label">Tax Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="TaxName" name="TaxName" class="form-control" value="@Model.TaxName" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="TaxAddress" class="col-sm-4 col-form-label">Tax Address</label>
+                    <div class="col-sm-8">
+                        <textarea id="TaxAddress" name="TaxAddress" class="form-control" rows="3" value="@Model.TaxAddress"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label for="TaxCity" class="col-sm-4 col-form-label">Tax City</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="TaxCity" name="TaxCity" class="form-control" value="@Model.TaxCity" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="NPWP" class="col-sm-4 col-form-label">NPWP</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="NPWP" name="NPWP" class="form-control" value="@Model.NPWP" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="JoinDate" class="col-sm-4 col-form-label">Join Date</label>
+                    <div class="col-sm-8">
+                        <input type="date" id="JoinDate" name="JoinDate" class="form-control" value="@Model.JoinDate" />
+                    </div>
+                </div>
+                <!-- Customer Type (Combobox) -->
+                <div class="form-group row">
+                    <label for="CustType" class="col-sm-4 col-form-label">Customer Type</label>
+                    <div class="col-sm-8">
+                        <select id="CustType" name="CustType" class="form-control" required>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Customer Sub Type (Combobox) -->
+                <div class="form-group row">
+                    <label for="CustSubType" class="col-sm-4 col-form-label">Customer Sub Type</label>
+                    <div class="col-sm-8">
+                        <select id="CustSubType" name="CustSubType" class="form-control" required>
+                            <option value="">Select Customer Sub Type</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Area (Combobox) -->
+                <div class="form-group row">
+                    <label for="Area" class="col-sm-4 col-form-label">Area</label>
+                    <div class="col-sm-8">
+                        <select id="Area" name="Area" class="form-control" required>
+                            <option value="">Select Area</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Salesman (Combobox) -->
+                <div class="form-group row">
+                    <label for="Salesman" class="col-sm-4 col-form-label">Salesman</label>
+                    <div class="col-sm-8">
+                        <select id="Salesman" name="Salesman" class="form-control" required>
+                            <option value="">Select Salesman</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Checkbox for PKP -->
+                <div class="form-group row">
+                    <label for="PKP" class="col-sm-4 col-form-label">PKP</label>
+                    <div class="col-sm-8">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="PKP" name="PKP">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="Term" class="col-sm-4 col-form-label">Term</label>
+                    <div class="col-sm-8">
+                        <input type="number" id="Term" name="Term" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg-12 mt-5">
+                <button type="submit" class="btn btn-success" id="submitAddCustomerBtn">Save Changes</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="~/js/customeredit.js"></script>

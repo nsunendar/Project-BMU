@@ -1,0 +1,135 @@
+﻿@model List<IMSWebApp.Models.InventoryList>  
+
+<div class="container mt-2">
+    @foreach (var inv in Model)
+    {
+        <div class="card mb-2">
+            <div class="card-header">
+                <h5 class="card-title">Product Code: @inv.InvCode</h5>
+            </div>
+            <div class="card-body">   
+                <div class="form-group row">
+                    <label for="PlantCode" class="col-sm-2 col-form-label">Plant Code</label>
+                    <div class="col-sm-10">
+                        <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.PlantCode</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="InvCode" class="col-sm-2 col-form-label">Inventory Code</label>
+                    <div class="col-sm-10">
+                        <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.InvCode</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="InvName" class="col-sm-2 col-form-label">Inventory Name</label>
+                    <div class="col-sm-10">
+                        <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.InvName</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="RelasiCode" class="col-sm-2 col-form-label">Part Number</label>
+                    <div class="col-sm-10">
+                        <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.RelasiCode</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="CSINVName" class="col-sm-2 col-form-label">CSINV Name</label>
+                    <div class="col-sm-10">
+                        <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.CSINVName</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label for="InvStatus" class="col-sm-4 col-form-label">Status</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">  @(inv.InvStatus ? "Active" : "Inactive")</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Discontinue" class="col-sm-4 col-form-label">Discontinue</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">  @(inv.Discontinue ? "Yes" : "No")</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="InvType" class="col-sm-4 col-form-label">Type</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.InvTypeDesc</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="InvSubType" class="col-sm-4 col-form-label">Sub Type</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.InvSubTypeDesc</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="SatuanKecil" class="col-sm-4 col-form-label">Small Unit</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.SmallUnitDesc</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Crt" class="col-sm-4 col-form-label">Crt</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.Crt</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Fra" class="col-sm-4 col-form-label">Fra</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.Fra</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Norm" class="col-sm-4 col-form-label">Norm</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.Norm</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label for="VendorCode" class="col-sm-4 col-form-label">Vendor Code</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.VendorName</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Barcode" class="col-sm-4 col-form-label">Barcode</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.Barcode</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="SatuanBesar" class="col-sm-4 col-form-label">Large Unit</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.LargeUnitDesc</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Brand" class="col-sm-4 col-form-label">Brand</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.BrandDesc</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="SalesPrice" class="col-sm-4 col-form-label">Sales Price</label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.SalesPrice</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="BuyPrice" class="col-sm-4 col-form-label">Buy Price </label>
+                            <div class="col-sm-8">
+                                <label class="form-control" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: .375rem .75rem;">@inv.BuyPrice</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

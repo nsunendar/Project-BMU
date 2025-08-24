@@ -1,0 +1,222 @@
+﻿<div class="container mt-4">
+    <form id="addProductForm">
+        @* @Html.AntiForgeryToken() *@
+        <input type="hidden" id="hdnInvType" value="" />
+        <input type="hidden" id="hdnInvSubType" value="" />
+        <input type="hidden" id="hdnBrand" value="" />
+        <input type="hidden" id="hdnVendorCode" value="" />
+        <input type="hidden" id="hdnNoMachine" value="" />
+        <input type="hidden" id="hdnPeople" value="" />
+        <input type="hidden" id="hdnProcess" value="" />
+        <input type="hidden" id="hdnSmallUnit" value="" />
+        <input type="hidden" id="hdnLargeUnit" value="" />
+
+        <!-- Inventory Code -->
+        <div class="form-group row">
+            <label for="InvCode" class="col-sm-2 col-form-label">Inventory Code</label>
+            <div class="col-sm-10">
+            <input type="text" id="InvCode" name="InvCode" class="form-control" />
+            </div>
+        </div>
+        <!-- Inventory Name -->
+        <div class="form-group row">
+            <label for="InvName" class="col-sm-2 col-form-label">Inventory Name</label>
+            <div class="col-sm-10">
+            <input type="text" id="InvName" name="InvName" class="form-control" />
+            </div>
+        </div>
+        <!-- Relasi Code -->
+        <div class="form-group row">
+            <label for="RelasiCode" class="col-sm-2 col-form-label">Part Number</label>
+            <div class="col-sm-10">
+            <input type="text" id="RelasiCode" name="RelasiCode" class="form-control" />
+            </div>
+        </div>
+        <!-- CSINV Name -->
+        <div class="form-group row">
+            <label for="CSINVName" class="col-sm-2 col-form-label">CSINV Name</label>
+            <div class="col-sm-10">
+            <input type="text" id="CSINVName" name="CSINVName" class="form-control" />
+            </div>
+        </div>
+
+        <!-- Left Column -->
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Inventory Status -->
+                <div class="form-group row">
+                    <label for="InvStatus" class="col-sm-4 col-form-label">Status</label>
+                    <div class="col-sm-3">
+                        <input type="checkbox" id="InvStatus" name="InvStatus" class="form-check-input" />
+                    </div>
+                </div>
+                <!-- Inventory Type (ComboBox) -->
+                <div class="form-group row">
+                    <label for="InvType" class="col-sm-4 col-form-label">Type</label>
+                    <div class="col-sm-8">
+                        <select id="InvType" name="InvType" class="form-control">
+                            <option value="">Select Inventory Type</option>
+                            <!-- Options will be populated by jQuery -->
+                        </select>
+                    </div>
+                </div>
+                <!-- Brand (ComboBox) -->
+                <div class="form-group row">
+                    <label for="Brand" class="col-sm-4 col-form-label">Brand</label>
+                    <div class="col-sm-8">
+                        <select id="Brand" name="Brand" class="form-control">
+                            <option value="">Select Brand</option>
+                            <!-- Options will be populated by jQuery -->
+                        </select>
+                    </div>
+                </div>
+                <!-- Sales Price -->
+                <div class="form-group row">
+                    <label for="SalesPrice" class="col-sm-4 col-form-label">Sales Price</label>
+                    <div class="col-sm-8">
+                    <input type="number" id="SalesPrice" name="SalesPrice" class="form-control" />
+                    </div>
+                </div>
+                <!-- Buy Price -->
+                <div class="form-group row">
+                    <label for="BuyPrice" class="col-sm-4 col-form-label">Buy Price</label>
+                    <div class="col-sm-8">
+                    <input type="number" id="BuyPrice" name="BuyPrice" class="form-control" />
+                    </div>
+                </div>
+                <!-- Norm -->
+                <div class="form-group row">
+                    <label for="Norm" class="col-sm-4 col-form-label">Norm</label>
+                    <div class="col-sm-8">
+                    <input type="number" id="Norm" name="Norm" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group row">
+                            <label for="Crt" class="col-sm-4 col-form-label">Crt</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                    <input type="number" id="Crt" name="Crt" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="form-group row">
+                                    <label for="Fra" class="col-sm-4 col-form-label">Fra</label>
+                                    <div class="col-sm-8">
+                                    <input type="number" id="Fra" name="Fra" class="form-control"  />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <!-- Discontinue -->
+                <div class="form-group row">
+                    <label for="Discontinue" class="col-sm-4 col-form-label">Discontinue</label>
+                    <div class="col-sm-3">
+                        <input type="checkbox" id="Discontinue" name="Discontinue" class="form-check-input" />
+                    </div>
+                </div>
+                <!-- Inventory Sub Type (ComboBox) -->
+                <div class="form-group row">
+                    <label for="InvSubType" class="col-sm-4 col-form-label">Sub Type</label>
+                    <div class="col-sm-8">
+                        <select id="InvSubType" name="InvSubType" class="form-control">
+                            <option value="">Select Inventory Sub Type</option>
+                            <!-- Options will be populated by jQuery -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Vendor Code (ComboBox) -->
+                <div class="form-group row">
+                    <label for="VendorCode" class="col-sm-4 col-form-label">Vendor</label>
+                    <div class="col-sm-8">
+                        <select id="VendorCode" name="VendorCode" class="form-control">
+                            <option value="">Select Vendor</option>
+                            <!-- Options will be populated by jQuery -->
+                        </select>
+                    </div>
+                </div>
+                <!-- People (ComboBox) -->
+@*                 <div class="form-group row">
+                    <label for="People" class="col-sm-4 col-form-label">People</label>
+                    <div class="col-sm-8">
+                        <select id="People" name="People" class="form-control">
+                            <option value="">Select People</option>
+                            <!-- Options will be populated by jQuery -->
+                        </select>
+                    </div>
+                </div> *@
+                <!-- People (ComboBox) -->
+                <div class="form-group row">
+                    <label for="SmallUnit" class="col-sm-4 col-form-label">Small Unit</label>
+                    <div class="col-sm-8">
+                        <select id="SmallUnit" name="SmallUnit" class="form-control">
+                            <option value="">Select Unit</option>
+                            <!-- Options will be populated by jQuery -->
+                        </select>
+                    </div>
+                </div>
+                <!-- People (ComboBox) -->
+                <div class="form-group row">
+                    <label for="LargeUnit" class="col-sm-4 col-form-label">Large Unit</label>
+                    <div class="col-sm-8">
+                        <select id="LargeUnit" name="LargeUnit" class="form-control">
+                            <option value="">Select Unit</option>
+                            <!-- Options will be populated by jQuery -->
+                        </select>
+                    </div>
+                </div>
+                <!-- Barcode -->
+                <div class="form-group row">
+                    <label for="Barcode" class="col-sm-4 col-form-label">Barcode</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="Barcode" name="Barcode" class="form-control" />
+                    </div>
+                </div>
+
+@*                 <!-- No Machine (ComboBox) -->
+                <div class="form-group row">
+                    <label for="NoMachine" class="col-sm-4 col-form-label">No Machine</label>
+                    <div class="col-sm-8">
+                        <select id="NoMachine" name="NoMachine" class="form-control">
+                            <option value="">Select Machine</option>
+                            <!-- Options will be populated by jQuery -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Process (ComboBox) -->
+                <div class="form-group row">
+                    <label for="Process" class="col-sm-4 col-form-label">Process</label>
+                    <div class="col-sm-8">
+                        <select id="Process" name="Process" class="form-control">
+                            <option value="">Select Process</option>
+                            <!-- Options will be populated by jQuery -->
+                        </select>
+                    </div>
+                </div> *@
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg-12 mt-5">
+                <button type="submit" class="btn btn-success" id="submitAddProductBtn">Save</button>
+            </div>
+        </div>
+        
+    </form>
+</div>
+
+<script src="~/js/inventoryedit.js"></script>
+

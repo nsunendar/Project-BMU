@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Multiple Startup Project",
+    "Projects": [
+      {
+        "Path": "IMSWebApp\\IMSWebApp.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "IMSWebApi\\IMSWebApi.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -1,0 +1,165 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Manufactirung Informtion System</title>
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/AdminLTE/dist/css/adminlte.min.css">
+
+    <!-- DevExtreme CSS -->
+    <link rel="stylesheet" href="/css/devextreme/dx.light.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DevExtreme JS -->
+    <script src="/js/devextreme/dx.all.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .login-page {
+            background: #f4f6f9;
+            padding: 50px;
+        }
+
+        .login-box {
+            width: 360px;
+            margin: auto;
+        }
+
+        .login-box-body {
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .login-logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+/*         .dx-button {
+            width: 50%;
+        } */
+
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+@*         <div class="login-logo">
+            <a href="#"><b>Manufacturing</b>&nbsp;Inforamtion System</a>
+        </div> *@
+        @Html.AntiForgeryToken()
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Sign in</p>
+                <!-- Form Login -->
+                <div class="login-form">
+                    <div class="dx-field">
+                        <div class="dx-field-label">Username</div>
+                        <div class="dx-field-value">
+                            <div id="username" class="dx-textbox"></div>
+                        </div>
+                    </div>
+                    <div class="dx-field">
+                        <div class="dx-field-label">Password</div>
+                        <div class="dx-field-value">
+                            <div id="password" class="dx-textbox" type="password"></div>
+                        </div>
+                    </div>
+                    <div class="dx-field text-center">
+                        <button id="loginBtn" class="dx-button text-center">Sign In</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            // Initialize DevExtreme Widgets for the Login Form
+            $("#username").dxTextBox({
+                placeholder: "Enter your username"
+            });
+            $("#password").dxTextBox({
+                placeholder: "Enter your password",
+                mode: "password"
+            });
+            $("#loginBtn").dxButton({
+                text: "Sign In",
+                onClick: function () {
+                    var username = $("#username").dxTextBox("instance").option("value");
+                    var password = $("#password").dxTextBox("instance").option("value");
+                    //console.log(username);
+                    //console.log(password);
+                    if (username && password) {
+                        //alert("username: " + username + "\nPassword: " + password );
+                        processLogin(username, password);
+                    } else {
+                        alert("Please fill in all fields.");
+                    }
+                }
+            });
+        });
+
+        function processLogin(user, pass) {
+            var token = $('input[name="__RequestVerificationToken"]').val();
+            //console.log(token);
+            $.ajax({
+                url: "/Login/LoginChecking",
+                type: 'POST',
+                data: {
+                    __RequestVerificationToken: token,
+                    userN: user,
+                    userP: pass
+                },
+                success: function (response) {
+                    console.log(response);
+                    if (response == "Ok") {
+                        window.location = "Home";
+                    } else {
+                        $('#error').text(response.message).show();
+                    }
+
+
+                    // if (response.success) {
+                    //     if (response.role === 'admin') {
+                    //         window.location.href = '/Billing/AdminDashboard';
+                    //     } else {
+                    //         window.location.href = '/Billing/UserDashboard/uid';
+                    //     }
+                    // } else {
+                    //     $('#error').text(response.message).show();
+                    // }
+                },
+                error: function () {
+                    $('#error').text('An error occurred while processing your request.').show();
+                }
+            });
+        }
+
+    </script>
+
+    <!-- AdminLTE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+</body>
+</html>

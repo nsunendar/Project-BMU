@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMSWebApp", "IMSWebApp\IMSWebApp.csproj", "{7D28B3DA-E14D-4CEC-87F6-3C274177377C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9797741D-E40E-4724-9FCE-DF16B3A0F936} = {9797741D-E40E-4724-9FCE-DF16B3A0F936}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevExtreme NuGet.config", "DevExtreme NuGet.config", "{EF76376F-8424-4383-98F6-D0A369054A3E}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.config = NuGet.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMSWebApi", "IMSWebApi\IMSWebApi.csproj", "{9797741D-E40E-4724-9FCE-DF16B3A0F936}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D28B3DA-E14D-4CEC-87F6-3C274177377C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D28B3DA-E14D-4CEC-87F6-3C274177377C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D28B3DA-E14D-4CEC-87F6-3C274177377C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D28B3DA-E14D-4CEC-87F6-3C274177377C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9797741D-E40E-4724-9FCE-DF16B3A0F936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9797741D-E40E-4724-9FCE-DF16B3A0F936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9797741D-E40E-4724-9FCE-DF16B3A0F936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9797741D-E40E-4724-9FCE-DF16B3A0F936}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BC0C673-32A1-4DB3-8A71-70D6E32ABB55}
+	EndGlobalSection
+EndGlobal

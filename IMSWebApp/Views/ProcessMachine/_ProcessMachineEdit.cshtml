@@ -1,0 +1,58 @@
+﻿@model IMSWebApp.Models.TMProcess
+
+<div class="container mt-4">
+    <form id="editProcessForm">
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" id="Id" name="Id" class="form-control" value="@Model.Id" />
+        <div class="form-group">
+            <label for="BussCode">Business Code</label>
+            <input type="text" class="form-control" id="BussCode" name="BussCode" value="@Model.BussCode" required />
+        </div>
+
+        <div class="form-group">
+            <label for="PlantCode">Plant Code</label>
+            <input type="text" class="form-control" id="PlantCode" name="PlantCode" value="@Model.PlantCode" required />
+        </div>
+
+        <div class="form-group">
+            <label for="ProcCode">Process Code</label>
+            <input type="text" class="form-control" id="ProcCode" name="ProcCode" value="@Model.ProcCode" required />
+        </div>
+
+        <div class="form-group">
+            <label for="NoProcess">Process Number</label>
+            <input type="number" class="form-control" id="NoProcess" name="NoProcess" value="@Model.NoProcess" />
+        </div>
+
+        <div class="form-group">
+            <label for="CodeMachine">Machine Code</label>
+            <input type="text" class="form-control" id="CodeMachine" name="CodeMachine" value="@Model.CodeMachine" />
+        </div>
+
+        <div class="form-group">
+            <label for="QtyUsage">Quantity Usage</label>
+            <input type="number" step="0.0001" class="form-control" id="QtyUsage" name="QtyUsage" value="@Model.QtyUsage" />
+        </div>
+
+        <div class="form-group">
+            <label for="TarProDay">Tariff per Day</label>
+            <input type="number" step="0.0001" class="form-control" id="TarProDay" name="TarProDay" value="@Model.TarProDay" />
+        </div>
+
+        <div class="form-group">
+            <label for="TarProHours">Tariff per Hour</label>
+            <input type="number" step="0.0001" class="form-control" id="TarProHours" name="TarProHours" value="@Model.TarProHours" />
+        </div>
+
+        <div class="form-group">
+            <label for="DateProcess">Date Process</label>
+            <input type="datetime-local" class="form-control" id="DateProcess" name="DateProcess" value="@Model.DateProcess?.ToString("yyyy-MM-ddTHH:mm")" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+   @*      <button type="button" class="btn btn-secondary" onclick="cancelEdit()">Cancel</button> *@
+    </form>
+</div>
+
+<script src="~/js/processmachine.js"></script>

@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="wwwroot\AdminLTE\docs\**" />
+      <Compile Remove="wwwroot\AdminLTE\pages\**" />
+      <Content Remove="wwwroot\AdminLTE\docs\**" />
+      <Content Remove="wwwroot\AdminLTE\pages\**" />
+      <EmbeddedResource Remove="wwwroot\AdminLTE\docs\**" />
+      <EmbeddedResource Remove="wwwroot\AdminLTE\pages\**" />
+      <None Remove="wwwroot\AdminLTE\docs\**" />
+      <None Remove="wwwroot\AdminLTE\pages\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="wwwroot\AdminLTE\iframe.html" />
+      <Content Remove="wwwroot\AdminLTE\index.html" />
+      <Content Remove="wwwroot\AdminLTE\index2.html" />
+      <Content Remove="wwwroot\AdminLTE\index3.html" />
+      <Content Remove="wwwroot\AdminLTE\starter.html" />
+    </ItemGroup>
+
+    <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="5.1.0" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="23.1.13" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.7" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.13.0" />
+    </ItemGroup>
+
+    <ProjectExtensions><VisualStudio><UserProperties TemplateFeatures="NETCORE" /></VisualStudio></ProjectExtensions>
+
+</Project>

@@ -1,0 +1,16 @@
+﻿/*.content-wrapper {
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}*/
+
+body {
+    background-image: url('../img/bg.jpg'); /* Path ke gambar latar belakang */
+    background-size: cover; /* Membuat gambar menutupi seluruh area body */
+    background-position: center; /* Memusatkan gambar di tengah */
+    background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+    margin: 0; /* Menghilangkan margin default pada body */
+    padding: 0; /* Menghilangkan padding default pada body */
+    height: 100vh; /* Menetapkan tinggi body untuk memenuhi layar penuh */
+}

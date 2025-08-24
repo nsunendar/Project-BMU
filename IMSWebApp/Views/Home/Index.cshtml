@@ -1,0 +1,56 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Manufacturing Information System";
+    var ModulList = ViewData["ModulList"] as List<IMSWebApp.Models.MenuModul>;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <link rel="stylesheet" href="css/dock.css">
+    <link rel="stylesheet" href="css/Home.css">
+</head>
+<body>
+<div class="content-wrapper">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="text-center">
+                <div class="dock">
+                    <div class="dock-container">
+                        @if (ModulList != null)
+                        {
+                            @foreach (var item in ModulList)
+                            {
+                                if (item.RightAuth == 1)
+                                {
+                                    <li class="li-2">
+                                        <div class="name">@item.ModulName</div>
+                                        <a href="@item.Url" class="menulink" data-id="@item.Id"> 
+                                            <img class="ico" src="img/@item.Images" alt="">
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="li-2">
+                                        <div class="name">@item.ModulName</div>
+                                        <a href="javascript:void(0);" class="menulink" data-id="@item.Id"> 
+                                            <img class="ico" src="img/@item.Images" alt="">
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="js/Home.js"></script>
+<script src="js/dock.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+</html>

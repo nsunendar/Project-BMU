@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<style>
+    .dx-datagrid {
+        font: 11px verdana;
+        height: calc(100vh - 200px);
+    }
+</style>
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-1">
+            <div class="col-sm-6">
+                <h4 class="m-0">
+                </h4>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/MasterData">Master Data</a></li>
+                    <li class="breadcrumb-item active">Inventory Brand</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div id="dataGridInvBrand"></div>
+            <div id="myPopupInvBrandEdit" class="dx-popup"></div>
+            <div id="myPopupInvBrandAdd" class="dx-popup"></div>
+        </div>
+    </div>
+</section>
+
+@section gridjs
+{
+    <!-- Main content -->
+    <script src="~/js/popupgridinvbrand.js"></script>
+}

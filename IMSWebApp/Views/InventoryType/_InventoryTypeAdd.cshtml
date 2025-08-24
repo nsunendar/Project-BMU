@@ -1,0 +1,25 @@
+﻿@model IMSWebApp.Models.TMInvType
+
+<div class="container mt-1">
+    <form id="addInvTypeForm">
+        <!-- Inventory Code -->
+        <div class="form-group row">
+            <label for="InvType" class="col-sm-2 col-form-label">Type Code</label>
+            <div class="col-sm-12">
+            <input type="text" id="InvType" name="InvType" class="form-control" />
+            </div>
+        </div>
+        <!-- Inventory Name -->
+        <div class="form-group row">
+            <label for="InvTypeDesc" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-12">
+            <input type="text" id="InvTypeDesc" name="InvTypeDesc" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg-12 mt-5">
+                <button type="submit" class="btn btn-success" id="submitAddInvTypeBtn">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

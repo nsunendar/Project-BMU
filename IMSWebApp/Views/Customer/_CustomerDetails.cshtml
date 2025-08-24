@@ -1,0 +1,86 @@
+﻿@model IMSWebApp.Models.CustomerList
+
+<div class="customer-details">
+    <table class="table">
+            <tr>
+                <th>Customer Code</th>
+                <td>@Model.CustCode</td>
+            </tr>
+            <tr>
+                <th>Customer Name</th>
+            <td>@Model.CustName</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+            <td>@Model.CustAddress</td>
+            </tr>
+            <tr>
+                <th>City</th>
+            <td>@Model.City</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+            <td>@Model.Status</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+            <td>@Model.Phone</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+            <td>@Model.Email</td>
+            </tr>
+            <tr>
+                <th>Owner Name</th>
+            <td>@Model.OwnerName</td>
+            </tr>
+            <tr>
+                <th>PKP</th>
+            <td>@Model.PKP</td>
+            </tr>
+            <tr>
+                <th>Tax Name</th>
+            <td>@Model.TaxName</td>
+            </tr>
+            <tr>
+                <th>Tax Address</th>
+            <td>@Model.TaxAddress</td>
+            </tr>
+            <tr>
+                <th>Tax City</th>
+            <td>@Model.TaxCity</td>
+            </tr>
+            <tr>
+                <th>NPWP</th>
+            <td>@Model.NPWP</td>
+            </tr>
+            <tr>
+                <th>Price Code</th>
+            <td>@Model.PriceCode</td>
+            </tr>
+            <tr>
+                <th>Join Date</th>
+            <td>if(@Model.JoinDate? != null ? @Model.JoinDate?.ToString("yyyy-MM-dd") : ""</td>
+            </tr>
+            <tr>
+                <th>Customer Type</th>
+            <td>@Model.CustType @Model.CsTypeDesc</td>
+            </tr>
+            <tr>
+                <th>Customer Sub Type</th>
+            <td>@Model.CustSubType @Model.CsSubTypeDesc</td>
+            </tr>
+            <tr>
+                <th>Area</th>
+            <td>@Model.Area @Model.CsAreaDesc</td>
+            </tr>
+            <tr>
+                <th>Salesman</th>
+            <td>@Model.Salesman @Model.SlsName</td>
+            </tr>
+            <tr>
+                <th>Term</th>
+            <td>@Model.Term</td>
+            </tr>
+    </table>
+</div>

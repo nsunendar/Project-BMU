@@ -1,0 +1,161 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = IMSWebApp
+build_property.RootNamespace = IMSWebApp
+build_property.ProjectDir = D:\DocumentProject\GitHubLocal\Project-BMU\IMSWebApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\DocumentProject\GitHubLocal\Project-BMU\IMSWebApp
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/BillOfMaterial/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbE9mTWF0ZXJpYWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/BillOfMaterial/_BOMEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbE9mTWF0ZXJpYWxcX0JPTUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Customer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Customer/_CustomerAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcX0N1c3RvbWVyQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Customer/_CustomerDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcX0N1c3RvbWVyRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Customer/_CustomerEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcX0N1c3RvbWVyRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/InventoryBrand/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5QnJhbmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/InventoryBrand/_InventoryBrandAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5QnJhbmRcX0ludmVudG9yeUJyYW5kQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/InventoryBrand/_InventoryBrandEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5QnJhbmRcX0ludmVudG9yeUJyYW5kRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/InventoryType/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5VHlwZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/InventoryType/_InventorySubTypeAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5VHlwZVxfSW52ZW50b3J5U3ViVHlwZUFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/InventoryType/_InventorySubTypeEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5VHlwZVxfSW52ZW50b3J5U3ViVHlwZUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/InventoryType/_InventoryTypeAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5VHlwZVxfSW52ZW50b3J5VHlwZUFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/InventoryType/_InventoryTypeEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5VHlwZVxfSW52ZW50b3J5VHlwZUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Inventory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Inventory/_InventoryAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XF9JbnZlbnRvcnlBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Inventory/_InventoryDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XF9JbnZlbnRvcnlEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Inventory/_InventoryEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XF9JbnZlbnRvcnlFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Machine/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFjaGluZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Machine/_MachineAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFjaGluZVxfTWFjaGluZUFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Machine/_MachineDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFjaGluZVxfTWFjaGluZURldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Machine/_MachineEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFjaGluZVxfTWFjaGluZUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/MasterData/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyRGF0YVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/ProcessMachine/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2Vzc01hY2hpbmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/ProcessMachine/_ProcessMachineAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2Vzc01hY2hpbmVcX1Byb2Nlc3NNYWNoaW5lQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/ProcessMachine/_ProcessMachineEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2Vzc01hY2hpbmVcX1Byb2Nlc3NNYWNoaW5lRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Vendor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Vendor/_VendorAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXF9WZW5kb3JBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Vendor/_VendorEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXF9WZW5kb3JFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

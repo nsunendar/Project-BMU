@@ -1,0 +1,861 @@
+[
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "GetDataBOMInventory",
+    "RelativePath": "BOM/getDataBOMInventory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "GetDataBOMInventoryById",
+    "RelativePath": "BOM/getDataBOMInventoryById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "GetDataBOMMaterialByCode",
+    "RelativePath": "BOM/getDataBOMMaterialByCode",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "GetDataBOMMaterialById",
+    "RelativePath": "BOM/getDataBOMMaterialById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.CustomerController",
+    "Method": "GetCsArea",
+    "RelativePath": "Customer/getCsArea",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.CustomerController",
+    "Method": "GetCsSalesman",
+    "RelativePath": "Customer/getCsSalesman",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.CustomerController",
+    "Method": "GetCustomerById",
+    "RelativePath": "Customer/getCustomerById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.CustomerController",
+    "Method": "GetCustSubTypes",
+    "RelativePath": "Customer/getCustSubTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cstype",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.CustomerController",
+    "Method": "GetCustTypes",
+    "RelativePath": "Customer/getCustTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.CustomerController",
+    "Method": "GetDataCustomer",
+    "RelativePath": "Customer/getDataCustomer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.CustomerController",
+    "Method": "InsertCustomer",
+    "RelativePath": "Customer/insertCustomer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerList",
+        "Type": "IMSWebApi.Models.CustomerList",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.CustomerController",
+    "Method": "UpdateCustomer",
+    "RelativePath": "Customer/updateCustomer",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cust",
+        "Type": "IMSWebApi.Models.CustomerList",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.LoginController",
+    "Method": "GetUserBranch",
+    "RelativePath": "getUserBranch",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetBrands",
+    "RelativePath": "Inventory/getBrands",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetDataInventory",
+    "RelativePath": "Inventory/getDataInventory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetInventoryById",
+    "RelativePath": "Inventory/getDataInventoryById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetInventoryFG",
+    "RelativePath": "Inventory/getInventoryFG",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetInvSubTypes",
+    "RelativePath": "Inventory/getInvSubTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invtype",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetInvTypes",
+    "RelativePath": "Inventory/getInvTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetNoMachine",
+    "RelativePath": "Inventory/getNoMachine",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetPeople",
+    "RelativePath": "Inventory/getPeople",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetProcess",
+    "RelativePath": "Inventory/getProcess",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetUnitInv",
+    "RelativePath": "Inventory/getUnitInv",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "GetVendor",
+    "RelativePath": "Inventory/getVendor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "InsertInventory",
+    "RelativePath": "Inventory/insertInventory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inventory",
+        "Type": "IMSWebApi.Models.Inventory",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryController",
+    "Method": "UpdateInventory",
+    "RelativePath": "Inventory/updateInventory",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inventory",
+        "Type": "IMSWebApi.Models.Inventory",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryBrandController",
+    "Method": "DeleteInventoryBrand",
+    "RelativePath": "InventoryBrand/deleteBrand",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invtype",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryBrandController",
+    "Method": "GetDataInvBrandByID",
+    "RelativePath": "InventoryBrand/getDataInvBrandByID",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryBrandController",
+    "Method": "GetDataInventoryBrand",
+    "RelativePath": "InventoryBrand/getDataInventoryBrand",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryBrandController",
+    "Method": "InsertInventoryBrand",
+    "RelativePath": "InventoryBrand/insertBrand",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invtype",
+        "Type": "IMSWebApi.Models.TMBrand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryBrandController",
+    "Method": "UpdateInventoryBrand",
+    "RelativePath": "InventoryBrand/updateBrand",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invtype",
+        "Type": "IMSWebApi.Models.TMBrand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryTypeController",
+    "Method": "GetDataInventorySubType",
+    "RelativePath": "InventoryType/getDataInventorySubType/{invtype}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invtype",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryTypeController",
+    "Method": "GetDataInventoryType",
+    "RelativePath": "InventoryType/getDataInventoryType",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryTypeController",
+    "Method": "GetDataInvSubTypeByID",
+    "RelativePath": "InventoryType/getDataInvSubTypeByID",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryTypeController",
+    "Method": "GetDataInvTypeByID",
+    "RelativePath": "InventoryType/getDataInvTypeByID",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryTypeController",
+    "Method": "InsertInventorySubType",
+    "RelativePath": "InventoryType/insertSubtype",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invsubtype",
+        "Type": "IMSWebApi.Models.TMInvSubType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryTypeController",
+    "Method": "InsertInventoryType",
+    "RelativePath": "InventoryType/insertType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invtype",
+        "Type": "IMSWebApi.Models.TMInvType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryTypeController",
+    "Method": "UpdateInventorySubType",
+    "RelativePath": "InventoryType/updateSubtype",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invsubtype",
+        "Type": "IMSWebApi.Models.TMInvSubType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.InventoryTypeController",
+    "Method": "UpdateInventoryType",
+    "RelativePath": "InventoryType/updateType",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invtype",
+        "Type": "IMSWebApi.Models.TMInvType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "LoginInfo",
+        "Type": "IMSWebApi.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.MachinesController",
+    "Method": "GetDataMachine",
+    "RelativePath": "Machines/getDataMachine",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.MachinesController",
+    "Method": "GetMachineById",
+    "RelativePath": "Machines/getDataMachineById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.MachinesController",
+    "Method": "InsertMachine",
+    "RelativePath": "Machines/insertMachine",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "machine",
+        "Type": "IMSWebApi.Models.TMMachine",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.MachinesController",
+    "Method": "UpdateMachine",
+    "RelativePath": "Machines/updateMachine",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "machine",
+        "Type": "IMSWebApi.Models.TMMachine",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.MenuController",
+    "Method": "GetMenuItem",
+    "RelativePath": "Menu/getMenuItem",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.MenuController",
+    "Method": "GetMenuItemModul",
+    "RelativePath": "Menu/getMenuItemModul",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.MenuController",
+    "Method": "GetMenuModul",
+    "RelativePath": "Menu/getModul",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.MenuController",
+    "Method": "GetMenuProces",
+    "RelativePath": "Menu/getProcess",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.MenuController",
+    "Method": "GetMenuProgram",
+    "RelativePath": "Menu/getProgram",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.ProcessMachineController",
+    "Method": "GetDataProcess",
+    "RelativePath": "ProcessMachine/getDataProcess",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.ProcessMachineController",
+    "Method": "GetProcessById",
+    "RelativePath": "ProcessMachine/getDataProcessById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.ProcessMachineController",
+    "Method": "GetNoMachine",
+    "RelativePath": "ProcessMachine/getNoMachine",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.VendorController",
+    "Method": "DeleteVendor",
+    "RelativePath": "Vendor/deleteVendor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vendorcode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.VendorController",
+    "Method": "GetDataVendor",
+    "RelativePath": "Vendor/getDataVendor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.VendorController",
+    "Method": "GetVendorById",
+    "RelativePath": "Vendor/getDataVendorById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.VendorController",
+    "Method": "GetVendorTypes",
+    "RelativePath": "Vendor/getVendorTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.VendorController",
+    "Method": "InsertInventory",
+    "RelativePath": "Vendor/insertInventory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vendor",
+        "Type": "IMSWebApi.Models.TMVendor",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.VendorController",
+    "Method": "UpdateVendor",
+    "RelativePath": "Vendor/updateVendor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vendor",
+        "Type": "IMSWebApi.Models.TMVendor",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[IMSWebApi.WeatherForecast, IMSWebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

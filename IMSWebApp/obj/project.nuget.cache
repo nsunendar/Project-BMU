@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "UMiAhiXcC68=",
+  "success": true,
+  "projectFilePath": "D:\\DocumentProject\\GitHubLocal\\Project-BMU\\IMSWebApp\\IMSWebApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lenovo\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\devextreme.aspnet.core\\23.1.13\\devextreme.aspnet.core.23.1.13.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\devextreme.aspnet.data\\5.1.0\\devextreme.aspnet.data.5.1.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\9.0.7\\microsoft.bcl.asyncinterfaces.9.0.7.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.13.0\\microsoft.identitymodel.abstractions.8.13.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.identitymodel.logging\\8.13.0\\microsoft.identitymodel.logging.8.13.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.13.0\\microsoft.identitymodel.tokens.8.13.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

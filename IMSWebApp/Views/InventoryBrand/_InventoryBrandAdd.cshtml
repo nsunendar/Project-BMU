@@ -1,0 +1,23 @@
+﻿@model IMSWebApp.Models.TMBrand
+
+<div class="container mt-1">
+    <form id="addInvBrandForm">
+        <div class="form-group row">
+            <label for="BrandCode" class="col-sm-3 col-form-label">Brand Code</label>
+            <div class="col-sm-3">
+                <input type="text" id="BrandCode" name="BrandCode" class="form-control" required />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="BrandDesc" class="col-sm-3 col-form-label">Description</label>
+            <div class="col-sm-8">
+                <input type="text" id="BrandDesc" name="BrandDesc" class="form-control" required />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg-12 mt-4">
+                <button type="submit" class="btn btn-success" id="submitEditInvBrandBtn">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,78 @@
+﻿@model IMSWebApp.Models.TMVendor
+
+@{
+    ViewData["Title"] = "Add New Vendor";
+}
+
+<h3>Add New Vendor</h3>
+
+<form method="post" asp-action="AddVendor" class="form-horizontal">
+    <div class="form-group row">
+        <label for="VendorCode" class="col-sm-2 col-form-label">Vendor Code</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="VendorCode" name="VendorCode" placeholder="Enter Vendor Code" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="VendorName" class="col-sm-2 col-form-label">Vendor Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="VendorName" name="VendorName" placeholder="Enter Vendor Name" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="VendorAddress" class="col-sm-2 col-form-label">Vendor Address</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="VendorAddress" name="VendorAddress" placeholder="Enter Vendor Address" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="City" class="col-sm-2 col-form-label">City</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="City" name="City" placeholder="Enter City" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Phone" class="col-sm-2 col-form-label">Phone</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Enter Phone Number" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter Email Address" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Status" class="col-sm-2 col-form-label">Status</label>
+        <div class="col-sm-10">
+            <input type="checkbox" class="form-check-input" id="Status" name="Status" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="PKP" class="col-sm-2 col-form-label">PKP</label>
+        <div class="col-sm-10">
+            <input type="checkbox" class="form-check-input" id="PKP" name="PKP" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="InsertUser" class="col-sm-2 col-form-label">Insert User</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="InsertUser" name="InsertUser" placeholder="Insert User" readonly />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Add Vendor</button>
+        </div>
+    </div>
+</form>
