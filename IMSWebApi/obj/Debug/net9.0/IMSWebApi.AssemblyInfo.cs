@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IMSWebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef505dd72bf0d56072551c56953d4cda486933f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("IMSWebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IMSWebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
