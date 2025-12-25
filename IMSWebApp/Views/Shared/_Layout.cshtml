@@ -138,14 +138,18 @@
 
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-header uppercase-text">
+                            <a href="/Home" >Home</a>
+                        </li>
+
                         <li class="nav-header uppercase-text">@ViewData["currentMenuName"]</li>
                         @if (meniItem != null)
                         {
                             @foreach (var menu in meniItem)
                             {
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon fas fa-chart-pie"></i>
+                                    <a href="#" class="nav-link">                                        
+                                       <i class="nav-icon @(string.IsNullOrEmpty(menu.ImgLink) ? "fa fa-circle" : menu.ImgLink)"></i> @* //fas fa-chart-pie *@
                                         <p>@menu.ProcesName<i class="right fas fa-angle-left"></i></p>
                                     </a>
                                     @foreach (var submenu in menu.MenuPrograms)

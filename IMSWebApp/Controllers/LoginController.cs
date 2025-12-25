@@ -123,7 +123,7 @@ namespace IMSWebApp.Controllers
                 }
                 catch (Exception ex)
                 {
-                    returnData = "Error accessing API";
+                    returnData = "Error accessing API" + ex.Message;
                 }
             }
             return returnData;

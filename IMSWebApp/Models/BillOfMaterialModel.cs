@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿
+using System.Xml.Linq;
 
 namespace IMSWebApp.Models
 {
@@ -30,4 +30,42 @@ namespace IMSWebApp.Models
         public string RawCode2 { get; set; }
     }
 
+    public class BOMItem
+    {
+        public int Id { get; set; }
+        public string BussCode { get; set; }
+        public string PlantCode { get; set; }
+        public string ItemCode { get; set; }
+        public string ItemName { get; set; }
+        public int ParentId { get; set; }
+        public string ParentItem { get; set; }
+    }
+
+    public class BOMItems
+    {
+        public int Id { get; set; }
+        public string BussCode { get; set; }
+        public string PlantCode { get; set; }
+        public string ItemCode { get; set; }
+        public string? ItemName { get; set; }
+        public bool Status { get; set; }
+        public decimal? QtyUsage { get; set; }
+        public string? Satuan { get; set; }
+        public int LevelSeqn { get; set; }
+        public int? ParentId { get; set; }
+        public string? ParentItem { get; set; }
+    }
+
+    public class FGModel
+    {
+        public int FGID { get; set; }
+        public string FGCODE{ get; set; }
+        public string FGNAME{ get; set; } 
+    }
+
+    public class BOMRMAddViewModel
+    {
+        public BOMItem FG { get; set; } 
+        public IEnumerable<BOMItem> RawMaterials { get; set; } 
+    }
 }

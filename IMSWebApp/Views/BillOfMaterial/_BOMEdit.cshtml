@@ -1,63 +1,176 @@
-﻿@model IMSWebApp.Models.BOMInventory
+﻿@model IMSWebApp.Models.BOMItems
+
+<style>
+  /* pastikan widget DevExtreme melebar penuh seperti input bootstrap */
+  #ItemCodeAC .dx-texteditor { width: 100%; }
+  /* samakan tinggi input */
+  #ItemCodeAC .dx-texteditor-input {
+    padding: .375rem .75rem;
+    height: calc(1.5em + .75rem + 2px);
+  }
+</style>
 
 <div class="container mt-4">
-    <form id="editBOMForm">
-        <input type="hidden" id="hdnFGCode" value="@Model.FGCode" />
-        <input type="hidden" id="Id" name="Id" class="form-control" value="@Model.Id" />
-        <div class="form-group row">
-            <label for="PlantCode" class="col-sm-2 col-form-label">Plant Code</label>
+    
+  <div class="card shadow-sm mb-3">
+      <div class="card-header d-flex align-items-center gap-2">
+        <button type="button" class="btn btn-primary btn-sm" name="btnSaveHeader" id="btnSaveHeader">Simpan Header</button>
+        <button type="button" class="btn btn-light btn-sm">Batal</button>
+      </div>
+
+      <div class="card-body">
+        <form id="frmHeader" class="container-fluid">
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+          <!-- Row: Item Code (search/autocomplete) -->
+          <div class="row mb-3 align-items-center">
+            <label class="col-sm-2 col-form-label fw-semibold mb-0">Item Code</label>
+            <div class="col-sm-6">
+              <!-- container dxAutocomplete -->
+              <div id="ItemCodeAC"></div>
+            </div>
+          </div>
+
+          <!-- Row: Hasil (Item Code + Item Name dalam satu baris) -->
+          <div class="row mb-3 align-items-center">
+            <label class="col-sm-2 col-form-label fw-semibold mb-0">Item</label>
             <div class="col-sm-10">
-                <input type="text" id="PlantCode" name="PlantCode" class="form-control" value="@Model.PlantCode" readonly />
+              <div class="row g-2">
+                <div class="col-md-4 col-sm-5 mr-0">
+                  <input type="text" class="form-control" id="ItemCodeResult" value="@Model.ItemCode" readonly />
+                </div>
+                <div class="col-md-8 col-sm-7" ml-0>
+                  <input type="text" class="form-control" id="ItemNameResult" value="@Model.ItemName" readonly />
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="BOMCode" class="col-sm-2 col-form-label">BOM Code</label>
-            <div class="col-sm-10">
-                <input type="text" id="BOMCode" name="BOMCode" class="form-control" value="@Model.BOMCode" readonly />
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="FGCode" class="col-sm-2 col-form-label">Inventory</label>
-            <div class="col-sm-10">
-                <select id="FGCode" name="FGCode" class="form-control">
-                    <option value="">Select Inventory</option>
-                    <!-- Options will be populated by jQuery -->
-                </select>
-            </div>
-        </div>
+          </div>
 
-@*         <div class="form-group row">
-            <label for="FGName" class="col-sm-2 col-form-label">Inventory Name</label>
-            <div class="col-sm-10">
-                <input type="number" id="FGName" name="FGName" class="form-control" value="@Model.FGName" />
+          <!-- Row: Status & Qty Usage sejajar -->
+          <div class="row mb-3 align-items-center">
+            <label class="col-sm-2 col-form-label fw-semibold mb-0">Status</label>
+            <div class="col-sm-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Status" @(Model.Status ? "checked" : "") />
+                <label class="form-check-label" for="Status">Aktif</label>
+              </div>
             </div>
-        </div> *@
 
-        <div class="form-group row">
-            <label for="BOMDescription" class="col-sm-2 col-form-label">Description</label>
-            <div class="col-sm-10">
-                <input type="text" id="BOMDescription" name="BOMDescription" class="form-control" value="@Model.BOMDescription" />
+            <label class="col-sm-2 col-form-label fw-semibold mb-0 text-sm-end">Qty Usage</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="QtyUsage" step="0.0001" min="0" value="@Model.QtyUsage" />
             </div>
-        </div>
+          </div>
 
-
-        <div class="form-group row">
-            <div class="col-lg-12 mt-4">
-                <button type="button" class="btn btn-primary" id="addBOMMaterialBtn">Add Material</button>
+          <!-- Row: Satuan -->
+          <div class="row mb-1 align-items-center">
+            <label class="col-sm-2 col-form-label fw-semibold mb-0">Satuan</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="Satuan" value="@Model.Satuan" />
             </div>
-            <div class="col-lg-12 mt-1">
-                <div id="bomMaterialGrid"></div>
-            </div>
-        </div>
+          </div>
 
-
-
-       <div class="form-group row">
-            <div class="col-lg-12 mt-10">
-                <button type="submit" class="btn btn-success" id="submitBOMBtn">Save BOM</button>
-            </div>
-        </div>
-    </form>
+        </form>
+      </div>
+    </div>
 </div>
 
-<script src="~/js/bom.js"></script>
+<script>
+
+    headerId= 0;
+
+    // ====== HELPERS ======
+    function antiForgery() {
+        return $('input[name="__RequestVerificationToken"]').val() || "";
+    }
+
+    // ====== SAVE HEADER (CREATE or UPDATE) ======
+    $("#btnSaveHeader").on("click", function (e) {
+        e.preventDefault();
+
+        payload = {
+            Id: headerId,
+            BussCode: $("#BussCode").val(),
+            PlantCode: $("#PlantCode").val(),
+            ItemName: $("#ItemNameResult").val(),
+            QtyUsage: $("#QtyUsage").val(),
+            Satuan: $("#Satuan").val(),
+            Status: $("#Status").is(":checked") ? "on" : ""
+        };
+
+        $.ajax({
+            url: "BillOfMaterial/UpdateBOMFG",
+            type: "POST",
+            headers: { "RequestVerificationToken": antiForgery() },
+            data: payload,
+            success: function () {
+                DevExpress.ui.notify("Header updated", "success", 2500);
+                setDetailEnabled(true);
+                $("#gridDetail").dxDataGrid("instance").refresh();
+            },
+            error: function (xhr) {
+                DevExpress.ui.notify(xhr.responseText || "Failure updated", "error", 3000);
+            }
+        });
+    });
+
+    // ====== ITEM LOOKUP (Autocomplete) FG ======
+    itemLookupStore = new DevExpress.data.CustomStore({
+        key: "Value", // respons SearchInventoryFG biasanya { Value, Text } untuk SelectedBoxValues
+        load: function (loadOptions) {
+            const term = (loadOptions.searchValue || "").trim();
+            const d = $.Deferred();
+            if (!term || term.length < 2) { d.resolve([]); return d.promise(); }
+
+            $.ajax({
+                url: "BillOfMaterial/SearchInventoryFG",
+                type: "GET",
+                data: { invcode: term },
+                success: res => d.resolve(res || []),
+                error: xhr => d.reject(xhr)
+            });
+            return d.promise();
+        },
+        byKey: function (key) {
+            const d = $.Deferred();
+            $.ajax({
+                url: "BillOfMaterial/SearchInventoryFG",
+                type: "GET",
+                data: { invcode: key },
+                success: function (res) {
+                    const item = (res || []).find(x => x.Value === key) || null;
+                    d.resolve(item);
+                },
+                error: xhr => d.reject(xhr)
+            });
+            return d.promise();
+        }
+    });
+
+    // Ganti input ItemCode menjadi autocomplete
+    initialItem = $("#ItemCode").val() || "";
+    $("#ItemCode").replaceWith('<div id="ItemCodeAC"></div>');
+
+    $("#ItemCodeAC").dxAutocomplete({
+        dataSource: new DevExpress.data.DataSource({ store: itemLookupStore }),
+        minSearchLength: 1,
+        searchTimeout: 300,
+        valueExpr: "Value",
+        displayExpr: function (item) {
+            return item ? `${item.Value} - ${item.Text}` : "";
+        },
+        searchExpr: ["Value", "Text"],
+        value: initialItem,
+        onSelectionChanged: function (e) {
+            if (e.selectedItem) {
+                $("#ItemNameResult").val(e.selectedItem.Text || "");
+                $("#ItemCodeResult").val(e.selectedItem.Value || "");
+                $("#ItemCodeAC").val("");
+            }
+        },
+        onValueChanged: function (e) {
+            const v = (e.value || "").trim();
+            if (!v) { DevExpress.ui.notify("Item Code wajib diisi", "warning", 2000); }
+        }
+    });
+</script>

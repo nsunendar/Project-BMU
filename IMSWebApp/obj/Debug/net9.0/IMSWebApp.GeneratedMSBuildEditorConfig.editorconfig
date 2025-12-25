@@ -24,8 +24,16 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbE9mTWF0ZXJpYWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/BillOfMaterial/_BOMAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbE9mTWF0ZXJpYWxcX0JPTUFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/BillOfMaterial/_BOMEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbE9mTWF0ZXJpYWxcX0JPTUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/BillOfMaterial/_BOMRMAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbE9mTWF0ZXJpYWxcX0JPTVJNQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Customer/Index.cshtml]
@@ -130,6 +138,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/ProcessMachine/_ProcessMachineEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2Vzc01hY2hpbmVcX1Byb2Nlc3NNYWNoaW5lRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Production/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DocumentProject/GitHubLocal/Project-BMU/IMSWebApp/Views/Shared/Error.cshtml]

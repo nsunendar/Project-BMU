@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using IMSWebApi.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Data;
@@ -15,24 +16,24 @@ namespace IMSWebApi.Controllers
             _connection = connection;
         }
 
-        [Route("/[controller]/getDataInventoryBrand")]
+        [Route("/[controller]/getDataPeople")]
         [HttpGet]
-        public async Task<IActionResult> GetDataInventoryBrand()
+        public async Task<IActionResult> GetDataPeople()
         {
             try
             {
                 await _connection.OpenAsync();
 
-                using (var command = new SqlCommand("SELECT BrandCode, BrandDesc, convert(varchar(35),'') InsertUser FROM TMBrand ORDER BY BrandCode", _connection))
+                using (var command = new SqlCommand("SELECT Id, BussCode, PlantCode, PeopleCode, PeopleName, Status, Phone, Email, JoinDate, PeopleJob, PeopleGroup, InsertUser FROM TMPeople ORDER BY Id", _connection))
                 {
                     command.CommandType = CommandType.Text;
                     using (var reader = await command.ExecuteReaderAsync())
                     {
-                        var itemList = new List<TMBrand>();
-                        var properties = typeof(TMBrand).GetProperties();
+                        var itemList = new List<TMPeople>();
+                        var properties = typeof(TMPeople).GetProperties();
                         while (await reader.ReadAsync())
                         {
-                            TMBrand item = new();
+                            TMPeople item = new();
                             foreach (var property in properties)
                             {
                                 if (!reader.IsDBNull(reader.GetOrdinal(property.Name)))
@@ -58,11 +59,11 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetDataInventoryBrand. " + ex.Message);
+                return StatusCode(500, "Can't Load GetDataPeople. " + ex.Message);
             }
         }
 
-        [Route("/[controller]/getDataInvBrandByID")]
+        [Route("/[controller]/getDataPeopleByID")]
         [HttpPost]
         public async Task<IActionResult> GetDataInvBrandByID([FromBody] string code)
         {
@@ -70,18 +71,18 @@ namespace IMSWebApi.Controllers
             {
                 await _connection.OpenAsync();
 
-                using (var command = new SqlCommand("SELECT BrandCode, BrandDesc, convert(varchar(35),'') InsertUser FROM TMBrand WHERE BrandCode=@code", _connection))
+                using (var command = new SqlCommand("SELECT BussCode, PlantCode, PeopleCode, PeopleName, Status, Phone, Email, JoinDate, PeopleJob, PeopleGroup, InsertUser FROM TMPeople WHERE PeopleCode=@code", _connection))
                 {
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddWithValue("@code", code);
 
                     using (var reader = await command.ExecuteReaderAsync())
                     {
-                        var itemList = new List<TMBrand>();
-                        var properties = typeof(TMBrand).GetProperties();
+                        var itemList = new List<TMPeople>();
+                        var properties = typeof(TMPeople).GetProperties();
                         while (await reader.ReadAsync())
                         {
-                            TMBrand item = new();
+                            TMPeople item = new();
                             foreach (var property in properties)
                             {
                                 if (!reader.IsDBNull(reader.GetOrdinal(property.Name)))
@@ -111,18 +112,27 @@ namespace IMSWebApi.Controllers
             }
         }
 
-        [Route("/[controller]/insertBrand")]
+        [Route("/[controller]/insertPeople")]
         [HttpPost]
-        public async Task<IActionResult> InsertInventoryBrand([FromBody] TMBrand invtype)
+        public async Task<IActionResult> InsertPeople([FromBody] TMPeople people)
         {
             string resultMsg = string.Empty;
             int resultNum = 0;
-            using (var command = new SqlCommand("spmInsertBrand", _connection))
+            using (var command = new SqlCommand("spmInsertPeople", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@BrandCode", invtype.BrandCode);
-                command.Parameters.AddWithValue("@BrandDesc", invtype.BrandDesc);
-                command.Parameters.AddWithValue("@InsertUser", invtype.InsertUser);
+                command.Parameters.AddWithValue("@Id", people.Id);
+                command.Parameters.AddWithValue("@BussCode", people.BussCode);
+                command.Parameters.AddWithValue("@PlantCode", people.PlantCode);
+                command.Parameters.AddWithValue("@PeopleCode", people.PeopleCode);
+                command.Parameters.AddWithValue("@PeopleName", people.PeopleName);
+                command.Parameters.AddWithValue("@Status", people.Status);
+                command.Parameters.AddWithValue("@Phone", people.Phone);
+                command.Parameters.AddWithValue("@Email", people.Email);
+                command.Parameters.AddWithValue("@JoinDate", people.JoinDate);
+                command.Parameters.AddWithValue("@PeopleJob", people.PeopleJob);
+                command.Parameters.AddWithValue("@PeopleGroup", people.PeopleGroup);
+                command.Parameters.AddWithValue("@InsertUser", people.InsertUser);
                 SqlParameter resultMsgParam = new SqlParameter("@ResultMsg", SqlDbType.VarChar, 800)
                 {
                     Direction = ParameterDirection.Output
@@ -160,18 +170,27 @@ namespace IMSWebApi.Controllers
             }
         }
 
-        [Route("/[controller]/updateBrand")]
+        [Route("/[controller]/updatePeople")]
         [HttpPut]
-        public async Task<IActionResult> UpdateInventoryBrand([FromBody] TMBrand invtype)
+        public async Task<IActionResult> UpdatePeople([FromBody] TMPeople people)
         {
             string resultMsg = string.Empty;
             int resultNum = 0;
-            using (var command = new SqlCommand("spmUpdateBrand", _connection))
+            using (var command = new SqlCommand("spmUpdatePeople", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@BrandCode", invtype.BrandCode);
-                command.Parameters.AddWithValue("@BrandDesc", invtype.BrandDesc);
-                command.Parameters.AddWithValue("@InsertUser", invtype.InsertUser);
+                command.Parameters.AddWithValue("@Id", people.Id);
+                command.Parameters.AddWithValue("@BussCode", people.BussCode);
+                command.Parameters.AddWithValue("@PlantCode", people.PlantCode);
+                command.Parameters.AddWithValue("@PeopleCode", people.PeopleCode);
+                command.Parameters.AddWithValue("@PeopleName", people.PeopleName);
+                command.Parameters.AddWithValue("@Status", people.Status);
+                command.Parameters.AddWithValue("@Phone", people.Phone);
+                command.Parameters.AddWithValue("@Email", people.Email);
+                command.Parameters.AddWithValue("@JoinDate", people.JoinDate);
+                command.Parameters.AddWithValue("@PeopleJob", people.PeopleJob);
+                command.Parameters.AddWithValue("@PeopleGroup", people.PeopleGroup);
+                command.Parameters.AddWithValue("@InsertUser", people.InsertUser);
                 SqlParameter resultMsgParam = new SqlParameter("@ResultMsg", SqlDbType.VarChar, 800)
                 {
                     Direction = ParameterDirection.Output
@@ -209,16 +228,16 @@ namespace IMSWebApi.Controllers
             }
         }
 
-        [Route("/[controller]/deleteBrand")]
+        [Route("/[controller]/deletePeople")]
         [HttpDelete]
-        public async Task<IActionResult> DeleteInventoryBrand([FromQuery] string invtype)
+        public async Task<IActionResult> DeletePeople([FromQuery] string peoplecode)
         {
             string resultMsg = string.Empty;
             int resultNum = 0;
-            using (var command = new SqlCommand("spmDeleteBrand", _connection))
+            using (var command = new SqlCommand("spmDeletePeople", _connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@BrandCode", invtype);
+                command.Parameters.AddWithValue("@PeopleCode", peoplecode);
                 SqlParameter resultMsgParam = new SqlParameter("@ResultMsg", SqlDbType.VarChar, 800)
                 {
                     Direction = ParameterDirection.Output

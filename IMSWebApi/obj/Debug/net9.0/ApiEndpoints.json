@@ -1,6 +1,32 @@
 [
   {
     "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "GetBOMLevelFG",
+    "RelativePath": "BOM/getBOMLevelFG",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "GetBOMLevelRaw",
+    "RelativePath": "BOM/getBOMLevelRaw/{parentItem}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parentItem",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
     "Method": "GetDataBOMInventory",
     "RelativePath": "BOM/getDataBOMInventory",
     "HttpMethod": "POST",
@@ -58,6 +84,86 @@
       {
         "Name": "parUsername",
         "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "InsertBOMHeader",
+    "RelativePath": "BOM/insertBOMHeader",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bomds",
+        "Type": "IMSWebApi.Models.BOMItem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "InsertLevelFG",
+    "RelativePath": "BOM/insertLevelFG",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bomds",
+        "Type": "IMSWebApi.Models.BOMItem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "SearchInventoryFG",
+    "RelativePath": "BOM/SearchInventoryFG/{searchitem}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchitem",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "SearchInventoryRM",
+    "RelativePath": "BOM/SearchInventoryRM/{searchitem}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchitem",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.BOMController",
+    "Method": "UpdateLevelFG",
+    "RelativePath": "BOM/updateLevelFG",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bomds",
+        "Type": "IMSWebApi.Models.BOMItem",
         "IsRequired": true
       }
     ],
@@ -706,6 +812,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "IMSWebApi.Controllers.PeopleController",
+    "Method": "DeletePeople",
+    "RelativePath": "People/deletePeople",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "peoplecode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.PeopleController",
+    "Method": "GetDataPeople",
+    "RelativePath": "People/getDataPeople",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.PeopleController",
+    "Method": "GetDataInvBrandByID",
+    "RelativePath": "People/getDataPeopleByID",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.PeopleController",
+    "Method": "InsertPeople",
+    "RelativePath": "People/insertPeople",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "people",
+        "Type": "IMSWebApi.Models.TMPeople",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.PeopleController",
+    "Method": "UpdatePeople",
+    "RelativePath": "People/updatePeople",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "people",
+        "Type": "IMSWebApi.Models.TMPeople",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "IMSWebApi.Controllers.ProcessMachineController",
     "Method": "GetDataProcess",
     "RelativePath": "ProcessMachine/getDataProcess",
@@ -745,6 +925,86 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.SalesmanController",
+    "Method": "DeleteSalesman",
+    "RelativePath": "Salesman/deleteSalesman",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idsalesman",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.SalesmanController",
+    "Method": "GetDataSalesman",
+    "RelativePath": "Salesman/getDataSalesman",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.SalesmanController",
+    "Method": "GetDataSalesmanByID",
+    "RelativePath": "Salesman/getDataSalesmanByID",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idsalesman",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.SalesmanController",
+    "Method": "InsertPeople",
+    "RelativePath": "Salesman/insertSalesman",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "salesman",
+        "Type": "IMSWebApi.Models.TMSalesman",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.SalesmanController",
+    "Method": "UpdatePeople",
+    "RelativePath": "Salesman/updateSalesman",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "salesman",
+        "Type": "IMSWebApi.Models.TMSalesman",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -838,24 +1098,83 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "IMSWebApi.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "IMSWebApi.Controllers.WarehouseController",
+    "Method": "DeleteWarehouse",
+    "RelativePath": "Warehouse/deleteWarehouse",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[IMSWebApi.WeatherForecast, IMSWebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "idwarehouse",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.WarehouseController",
+    "Method": "GetDataWarehouse",
+    "RelativePath": "Warehouse/getDataWarehouse",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parUsername",
+        "Type": "IMSWebApi.Models.SPParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.WarehouseController",
+    "Method": "GetDataWarehouseByID",
+    "RelativePath": "Warehouse/getDataWarehouseByID",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idwarehouse",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.WarehouseController",
+    "Method": "InsertWarehouse",
+    "RelativePath": "Warehouse/insertWarehouse",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "salesman",
+        "Type": "IMSWebApi.Models.TMWarehouse",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IMSWebApi.Controllers.WarehouseController",
+    "Method": "UpdateWarehouse",
+    "RelativePath": "Warehouse/updateWarehouse",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "salesman",
+        "Type": "IMSWebApi.Models.TMWarehouse",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -6,7 +6,9 @@
     .dx-datagrid {
         font: 11px verdana;
         height: calc(100vh - 200px);
+        width: max-width: 99%; /* calc(100vw - 930px); */
     }
+    
 </style>
 
 <!-- Content Header (Page header) -->
@@ -19,7 +21,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="~/MasterData">Master Data</a></li>
+                    <li class="breadcrumb-item"><a href="~/Production">@ViewData["currentMenuName"]</a></li>
                     <li class="breadcrumb-item active">Bill of Material</li>
                 </ol>
             </div>
@@ -28,17 +30,35 @@
 </div>
 <!-- /.content-header -->
 <!-- Main content -->
+
+<link rel="stylesheet" href="~/css/devextreme/dx.light.css" />
 <section class="content">
     <div class="container-fluid">
-        <div id="treeViewContainer" style="height: 500px;"></div>
-        <button id="addItemBtn">Add Item</button>
-        <button id="editItemBtn">Edit Item</button>
-        <button id="deleteItemBtn">Delete Item</button>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div id="dataGridFG"></div>
+                    <div id="myPopupFGEdit" class="dx-popup"></div>
+                    <div id="myPopupFGAdd" class="dx-popup"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="row ml-2">
+                        <div id="dataGridRM"></div>
+                        <div id="myPopupRMEdit" class="dx-popup"></div>
+                        <div id="myPopupRMAdd" class="dx-popup"></div>
+                    </div>
+                    <div class="row mt-1 ml-2">
+                        <div id="dataGridCP"></div>
+                        <div id="myPopupCPEdit" class="dx-popup"></div>
+                        <div id="myPopupCPAdd" class="dx-popup"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-@*         <div id="dataGridBOM"></div>
-        <div id="myPopupDetailBOM"></div>
-        <div id="myPopupEditBOM" class="dx-popup"></div>
-        <div id="myPopupAddBOM" class="dx-popup"></div> *@
+
     </div>
 </section>
 

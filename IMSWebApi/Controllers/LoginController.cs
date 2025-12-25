@@ -101,7 +101,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetMenuProces");
+                return StatusCode(500, "Can't Load GetMenuProces" + ex.Message);
             }
         }
 

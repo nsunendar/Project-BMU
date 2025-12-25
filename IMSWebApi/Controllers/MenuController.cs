@@ -64,7 +64,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetMenuModul");
+                return StatusCode(500, "Can't Load GetMenuModul" + ex.Message);
             }
         }
 
@@ -113,7 +113,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetMenuProces");
+                return StatusCode(500, "Can't Load GetMenuProces" + ex.Message);
             }
         }
 
@@ -162,7 +162,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetMenuProgram");
+                return StatusCode(500, "Can't Load GetMenuProgram" + ex.Message);
             }
         }
 
@@ -213,7 +213,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetMenuProgram");
+                return StatusCode(500, "Can't Load GetMenuProgram" + ex.Message);
             }
         }
 
@@ -298,7 +298,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetMenuProgram");
+                return StatusCode(500, "Can't Load GetMenuProgram" + ex.Message);
             }
         }
 

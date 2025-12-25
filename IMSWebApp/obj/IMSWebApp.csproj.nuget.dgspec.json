@@ -10,7 +10,7 @@
         "projectUniqueName": "D:\\DocumentProject\\GitHubLocal\\Project-BMU\\IMSWebApp\\IMSWebApp.csproj",
         "projectName": "IMSWebApp",
         "projectPath": "D:\\DocumentProject\\GitHubLocal\\Project-BMU\\IMSWebApp\\IMSWebApp.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\nendi.sunendar\\.nuget\\packages\\",
         "outputPath": "D:\\DocumentProject\\GitHubLocal\\Project-BMU\\IMSWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -19,7 +19,7 @@
         ],
         "configFilePaths": [
           "D:\\DocumentProject\\GitHubLocal\\Project-BMU\\NuGet.Config",
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nendi.sunendar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -30,9 +30,10 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\DevExpress 23.1\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.devexpress.com/H5fc3VflGqEbWid41vf6lJGYXLhmw3VkmtzyJcnhAKtXpLoCym/api": {}
+          "https://nuget.devexpress.com/H5fc3VflGqEbWid41vf6lJGYXLhmw3VkmtzyJcnhAKtXpLoCym/api/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -62,7 +63,7 @@
             },
             "DevExtreme.AspNet.Core": {
               "target": "Package",
-              "version": "[23.1.13, )"
+              "version": "[25.1.4, )"
             },
             "DevExtreme.AspNet.Data": {
               "target": "Package",
@@ -70,11 +71,15 @@
             },
             "Microsoft.Bcl.AsyncInterfaces": {
               "target": "Package",
-              "version": "[9.0.7, )"
+              "version": "[9.0.8, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[8.13.0, )"
+              "version": "[8.14.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -96,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

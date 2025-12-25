@@ -41,6 +41,10 @@ builder.Services.AddTransient<SqlConnection>(_ =>
     var connectionString = configuration.GetConnectionString("DefaultConnection");
     return new SqlConnection(connectionString);
 });
+
+//// Repositories
+//builder.Services.AddScoped<IBomRepository, BomRepository>();
+
 // Add services Cors to the container.
 builder.Services.AddCors(options =>
 {
@@ -58,11 +62,16 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.UseCors(x => x
     .AllowAnyMethod()

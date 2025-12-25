@@ -101,7 +101,7 @@ namespace IMSWebApp.Controllers
             await HttpContext.SignOutAsync("IMSWebApp");
             Response.Cookies.Delete("IMSWebAppCurrBranch");
             Response.Cookies.Delete("IMSWebAppCurrCompany");
-            return RedirectToAction("Login", "Login");
+            return RedirectToAction("Index", "Login");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

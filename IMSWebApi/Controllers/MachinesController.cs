@@ -113,7 +113,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetCustomerById");
+                return StatusCode(500, "Can't Load GetCustomerById" + ex.Message);
             }
         }
 

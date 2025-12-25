@@ -1,0 +1,188 @@
+﻿@model IMSWebApp.Models.BOMItems
+
+<style>
+  /* pastikan widget DevExtreme melebar penuh seperti input bootstrap */
+  #ItemCodeAC .dx-texteditor { width: 100%; }
+  /* samakan tinggi input */
+  #ItemCodeAC .dx-texteditor-input {
+    padding: .375rem .75rem;
+    height: calc(1.5em + .75rem + 2px);
+  }
+</style>
+
+<div class="container mt-4">
+    
+    <div class="card shadow-sm mb-3">
+  <div class="card-header d-flex align-items-center gap-2">
+    <button type="button" class="btn btn-primary btn-sm" name="btnSaveHeader" id="btnSaveHeader">Save</button>
+    <button type="button" class="btn btn-light btn-sm">Cancel</button>
+  </div>
+
+  <div class="card-body">
+    <form id="frmHeader" class="container-fluid">
+
+      <!-- Row: Item Code (search/autocomplete) -->
+      <div class="row mb-3 align-items-center">
+        <label class="col-sm-2 col-form-label fw-semibold mb-0">Item Code</label>
+        <div class="col-sm-6">
+          <!-- container dxAutocomplete -->
+          <div id="ItemCodeAC"></div>
+        </div>
+      </div>
+
+      <!-- Row: Hasil (Item Code + Item Name dalam satu baris) -->
+      <div class="row mb-3 align-items-center">
+        <label class="col-sm-2 col-form-label fw-semibold mb-0">Item</label>
+        <div class="col-sm-10">
+          <div class="row g-2">
+            <div class="col-md-4 col-sm-5 mr-0">
+              <input type="text" class="form-control" id="ItemCodeResult" readonly />
+            </div>
+            <div class="col-md-8 col-sm-7" ml-0>
+              <input type="text" class="form-control" id="ItemNameResult" readonly />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row: Status & Qty Usage sejajar -->
+      <div class="row mb-3 align-items-center">
+        <label class="col-sm-2 col-form-label fw-semibold mb-0">Status</label>
+        <div class="col-sm-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="Status" />
+            <label class="form-check-label" for="Status">Aktif</label>
+          </div>
+        </div>
+
+        <label class="col-sm-2 col-form-label fw-semibold mb-0 text-sm-end">Qty Usage</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="QtyUsage" step="0.0001" min="0" />
+        </div>
+      </div>
+
+      <!-- Row: Satuan -->
+      <div class="row mb-1 align-items-center">
+        <label class="col-sm-2 col-form-label fw-semibold mb-0">Satuan</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="Satuan" />
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script>
+    headerId = 0;
+
+    function antiForgery() {
+        return $('input[name="__RequestVerificationToken"]').val() || "";
+    }
+
+    // Save header
+    $("#btnSaveHeader").on("click", async function(e) {
+        e.preventDefault();
+        const payload = {
+            id: headerId,
+            itemCode: $("#ItemCodeResult").val(),
+            itemName: $("#ItemNameResult").val(),
+            bussCode: $("#BussCode").val(),
+            plantCode: $("#PlantCode").val(),
+            qtyUsage: $("#QtyUsage").val(),
+            status: 1 //$("#Status").is(":checked") ? 1 : 0
+        };
+        if (!payload.itemCode) { alert("Item Code wajib diisi."); return; }
+
+        // CREATE
+        //var formData = $(this).serializeArray();
+        $.ajax({
+            url: 'BillOfMaterial/InsertBOMFG',
+            type: 'POST',
+            data: payload, 
+            headers: { "RequestVerificationToken": antiForgery() },
+            success: function (res) {
+                // server sebaiknya return { id: <newId> }
+                if (res && typeof res.id !== "undefined") {
+                  headerId = res.id;
+                  $("#Id").val(res.id);
+                }
+            },
+            error: function (xhr) {
+                console.error(xhr);
+                DevExpress.ui.notify(xhr.responseText || "Gagal membuat header", "error", 3000);
+            }
+        });
+    });
+
+    // ====== ITEM LOOKUP (autocomplete) via $.ajax ======
+    itemLookupStore = new DevExpress.data.CustomStore({
+        key: "Value",
+        load: function(loadOptions) {
+            const term = (loadOptions.searchValue || "").trim();
+            const d = $.Deferred();
+            if (!term || term.length < 2) { d.resolve([]); return d.promise(); }
+            $.ajax({
+                url: "BillOfMaterial/SearchInventoryFG",
+                type: "GET",                
+                //headers: { "RequestVerificationToken": $(this).find('input[name="__RequestVerificationToken"]').val() },
+                //xhrFields: { withCredentials: true },
+                data: { invcode: term },
+                success: function(res){ 
+                    d.resolve(res); 
+                    //console.log(res);
+                },
+                error: function(xhr){ d.reject(xhr); }
+            });
+            return d.promise();
+        },
+        byKey: function(key){
+            const d = $.Deferred();
+            $.ajax({
+                url: "BillOfMaterial/SearchInventoryFG",
+                type: "GET",
+                data: { invcode: key },
+                success: function(res){
+                    const item = (res || []).find(x => x.itemCode === key) || null;
+                    d.resolve(item);
+                },
+                error: function(xhr){ d.reject(xhr); }
+            });
+            return d.promise();
+        }
+    });
+    function itemDisplay(item) {
+        if (!item) return "";
+        return (item.Value || "") + (item.Text ? (" - " + item.Text) : "");
+    }
+
+    // ganti input menjadi dxAutocomplete
+    val0 = $("#ItemCode").val() || "";
+    //console.log('val0', val0);
+    $("#ItemCode").replaceWith('<div id="ItemCodeAC"></div>');
+
+    $("#ItemCodeAC").dxAutocomplete({
+        dataSource: new DevExpress.data.DataSource({ store: itemLookupStore }),
+        minSearchLength: 1,
+        searchTimeout: 300,
+        valueExpr: "Text",           
+        displayExpr: function (item) { 
+            return item ? `${item.Value} - ${item.Text}` : "";
+        },
+        searchExpr: ["Value","Text"],  
+        value: val0,
+        onSelectionChanged: function(e){
+            if (e.selectedItem){
+                $("#ItemNameResult").val(e.selectedItem.Text || "");
+                $("#ItemCodeResult").val(e.selectedItem.Value || "");
+                $("#ItemCodeAC").val("");
+            }
+        },
+        onValueChanged: function(e){
+          // validasi sederhana (client)
+          const v = (e.value || "").trim();
+          if (!v) { DevExpress.ui.notify("Item Code wajib diisi", "warning", 2000); }
+        }
+    });
+
+</script>

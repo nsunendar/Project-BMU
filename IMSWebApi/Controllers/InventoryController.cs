@@ -111,7 +111,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetCustomerById");
+                return StatusCode(500, "Can't Load GetCustomerById" + ex.Message);
             }
         }
 
@@ -401,7 +401,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetInvTypes");
+                return StatusCode(500, "Can't Load GetInvTypes" + ex.Message);
             }
         }
 
@@ -455,7 +455,7 @@ namespace IMSWebApi.Controllers
             catch (Exception ex)
             {
                 // Logging optional error message, change "Can't Load GetInvSubTypes" if necessary
-                return StatusCode(500, "Can't Load GetInvSubTypes");
+                return StatusCode(500, "Can't Load GetInvSubTypes" + ex.Message);
             }
         }
 
@@ -502,7 +502,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetVendor");
+                return StatusCode(500, "Can't Load GetVendor" + ex.Message);
             }
         }
 
@@ -549,7 +549,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetBrands");
+                return StatusCode(500, "Can't Load GetBrands" + ex.Message);
             }
         }
 
@@ -596,7 +596,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetPeople");
+                return StatusCode(500, "Can't Load GetPeople" + ex.Message);
             }
         }
 
@@ -643,7 +643,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load Machine");
+                return StatusCode(500, "Can't Load Machine" + ex.Message);
             }
         }
 
@@ -690,7 +690,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetProcess");
+                return StatusCode(500, "Can't Load GetProcess" + ex.Message);
             }
         }
 
@@ -737,7 +737,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetPeople");
+                return StatusCode(500, "Can't Load GetPeople" + ex.Message);
             }
         }
 
@@ -780,11 +780,11 @@ namespace IMSWebApi.Controllers
                         await _connection.CloseAsync();
                         return Ok(itemList);
                     }
-                }
+                }   
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetCustomerById");
+                return StatusCode(500, "Can't Load GetCustomerById. " + ex.Message);
             }
         }
     }

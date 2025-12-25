@@ -111,7 +111,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetVendorById");
+                return StatusCode(500, "Can't Load GetVendorById" + ex.Message);
             }
         }
 
@@ -342,7 +342,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetInvTypes");
+                return StatusCode(500, "Can't Load GetInvTypes" + ex.Message);
             }
         }
 

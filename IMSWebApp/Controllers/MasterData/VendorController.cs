@@ -5,11 +5,8 @@ using IMSWebApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.IO;
 using System.Net;
-using System.Net.NetworkInformation;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Text;
 
 namespace IMSWebApp.Controllers.MasterData

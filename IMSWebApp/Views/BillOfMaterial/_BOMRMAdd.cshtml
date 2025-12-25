@@ -1,0 +1,251 @@
+﻿@* Views/BOM/_RMSectionDx.cshtml *@
+@model IMSWebApp.Models.BOMRMAddViewModel
+
+<div class="card">
+    <div class="card-header">
+        <div class="form-row align-items-center">
+            <label class="col-auto col-form-label">FG</label>
+            <div class="col-auto">
+                <input id="FG_Code" name="FG_Code" class="form-control form-control-sm" style="width:140px" value="@Model.FG.ItemCode" readonly />
+                <input type="hidden" id="hdnFGId" value="@Model.FG.Id" />
+            </div>
+            <div class="col">
+                <input id="FG_Name" class="form-control form-control-sm" value="@Model.FG.ItemName"  readonly />
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-2">
+        <button id="btnAddRM" class="btn btn-sm btn-primary mb-2">ADD</button>
+        <div id="rmGrid"></div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        (function(){
+            //const fgId = $("#FG_Id").val();
+
+            // ===== lookup material untuk dxAutocomplete (Code) =====
+            materialDs = new DevExpress.data.CustomStore({
+                key: "Value",
+                load: function(loadOptions) {
+                    const term = (loadOptions.searchValue || "").trim();
+                    const d = $.Deferred();
+                    if (!term || term.length < 2) { d.resolve([]); return d.promise(); }
+                    $.ajax({
+                        url: "BillOfMaterial/SearchInventoryRM",
+                        type: "GET",
+                        //headers: { "RequestVerificationToken": $(this).find('input[name="__RequestVerificationToken"]').val() },
+                        //xhrFields: { withCredentials: true },
+                        data: { invcode: term },
+                        success: function(res){
+                            d.resolve(res);
+                            //console.log(res);
+                        },
+                        error: function(xhr){
+                            d.reject(xhr);
+                        }
+                    });
+                    return d.promise();
+                },
+                byKey: function(key){
+                    const d = $.Deferred();
+                    $.ajax({
+                        url: "BillOfMaterial/SearchInventoryRM",
+                        type: "GET",
+                        data: { invcode: key },
+                        success: function(res){
+                            const item = (res || []).find(x => x.itemCode === key) || null;
+                            d.resolve(item);
+                        },
+                        error: function(xhr){ d.reject(xhr); }
+                    });
+                    return d.promise();
+                }
+            });
+
+            // ===== CustomStore RM (pakai jQuery AJAX; grid kosong dulu) =====
+            function antiHeaders(){
+                const h={ "Content-Type":"application/json" };
+                const t=$('input[name="__RequestVerificationToken"]').val();
+                if(t) h["RequestVerificationToken"]=t;
+                return h;
+            };
+
+            rmStore = new DevExpress.data.CustomStore({
+                key: "id",
+                load:  function(loadOptions) {
+                    $.ajax({
+                        url: "BillOfMaterial/SearchInventoryFG",
+                        type: "GET",
+                        data: { invcode: key },
+                        success: function(res){
+                            const item = (res || []).find(x => x.itemCode === key) || null;
+                            d.resolve(item);
+                        },
+                        error: function(xhr){ d.reject(xhr); }
+                    }),
+                // insert: (values)=> $.ajax({
+                //     url: `/api/bom/${fgId}/raw-materials`,
+                //     type:"POST",
+                //     data: JSON.stringify(values),
+                //     contentType:"application/json",
+                //     headers: antiHeaders()
+                // }),
+                // update: (key, values)=> $.ajax({
+                //     url: `/api/bom/${fgId}/raw-materials/${key}`,
+                //     type:"PUT",
+                //     data: JSON.stringify(values),
+                //     contentType:"application/json",
+                //     headers: antiHeaders()
+                // }),
+                // remove: (key)=> $.ajax({ url: `/api/bom/${fgId}/raw-materials/${key}`, type:"DELETE", headers: antiHeaders() })
+            });
+
+            // ===== Grid RM: START dengan data kosong; isi baris hanya via tombol ADD =====
+            grid = $("#rmGrid").dxDataGrid({
+                dataSource: [],
+                remoteOperations: {
+                    paging:true,
+                    sorting:true,
+                    filtering:true
+                },
+                keyExpr: "Id",
+                showBorders: true,
+                rowAlternationEnabled: true,
+                columnAutoWidth: true,
+                paging: {
+                    pageSize: 10
+                },
+                pager: {
+                    showInfo:true,
+                    showNavigationButtons:true,
+                    showPageSizeSelector:true,
+                    allowedPageSizes:[5,10,25,50,"all"]
+                },
+                editing: {
+                    mode: "popup",
+                    allowAdding: true,
+                    allowUpdating: true,
+                    allowDeleting: true,
+                    useIcons: true,
+                    popup: {
+                        title: "Raw Material",
+                        width: 720
+                    },
+                    form: {
+                        colCount: 2,
+                        items: [{
+                            dataField: "itemCode", label:{ text:"Code" }, isRequired:true,
+                            editorType: "dxAutocomplete",
+                            editorOptions: {
+                                dataSource: materialDs,
+                                valueExpr: "code",
+                                displayExpr: "display",
+                                minSearchLength: 1,
+                                searchTimeout: 300,
+                                placeholder: "Ketik kode/nama...",
+                                onValueChanged: function(e){
+                                    const chosen = e.component.option("selectedItem");
+                                    const g = $("#rmGrid").dxDataGrid("instance");
+                                    const rowKey = g.option("editing.editRowKey");
+                                    const rowIndex = g.getRowIndexByKey(rowKey);
+                                    if (chosen){
+                                        g.cellValue(rowIndex, "itemName", chosen.name || "");
+                                        g.cellValue(rowIndex, "satuan",   chosen.ea   || "");
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            dataField: "itemName",
+                            label:{
+                                text:"Name/Description"
+                            }
+                        },
+                        {
+                            dataField: "qtyUsage",
+                            label:{
+                                text:"Qty"
+                            },
+                            editorType:"dxNumberBox",
+                            editorOptions:{
+                                min:0, showSpinButtons:true,
+                                step:1
+                            }
+                        },
+                        {
+                            dataField: "satuan",
+                            label:{
+                                text:"EA"
+                            }
+                        },
+                        {
+                            dataField: "status",
+                            label:{
+                                text:"Active"
+                            },
+                            editorType:"dxCheckBox",
+                            colSpan:2
+                        }]
+                    }
+                },
+                columns: [
+                    { 
+                        type:"buttons", 
+                        width:110, 
+                        buttons:["edit","delete"] 
+                    },
+                    { 
+                        dataField:"itemCode", 
+                        caption:"Code",                
+                        lookup:{ 
+                            dataSource: materialDs, 
+                            valueExpr:"code", 
+                            displayExpr:"display" 
+                        },
+                        validationRules:[{ 
+                            type:"required" 
+                        }] 
+                    },
+                    { 
+                        dataField:"itemName", 
+                        caption:"Type Description" 
+                    },
+                    { 
+                        dataField:"qtyUsage", 
+                        caption:"Qty", 
+                        dataType:"number",
+                        format:{ 
+                            type:"fixedPoint", 
+                            precision:3 
+                        }, 
+                        alignment:"right" 
+                    },
+                    { 
+                        dataField:"satuan", 
+                        caption:"EA", 
+                        width:90 },
+                    { 
+                        dataField:"status", 
+                        caption:"Active", 
+                        width:80, 
+                        dataType:"boolean" 
+                    }
+                ]
+            }).dxDataGrid("instance");
+
+            // tombol ADD: saat pertama kali diklik, bind dataSource → rmStore, lalu open addRow
+            let bound = false;
+            $("#btnAddRM").on("click", function(){
+                if (!bound){
+                    grid.option("dataSource", rmStore);  // bind ke API saat ADD pertama
+                    bound = true;
+                }
+                grid.addRow();
+            });
+
+        })();
+    </script>
+}

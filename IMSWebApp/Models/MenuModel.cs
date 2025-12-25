@@ -6,8 +6,9 @@
         public string? ModulCode { get; set; }
         public string? ModulName { get; set; }
         public int? RightAuth { get; set; }
-        public string? Images { get; set; }
         public string? Url { get; set; }
+        public string? Images { get; set; }
+        public string? ImgLink { get; set; }
     }
     public class MenuProces
     {
@@ -15,7 +16,7 @@
         public string? ModulCode { get; set; }
         public string? ProcesCode { get; set; }
         public string? ProcesName { get; set; }
-        public string? Url { get; set; }
+        public string? ImgLink { get; set; }
     }
     public class MenuProgram
     {
@@ -37,6 +38,7 @@
         public Int64 ProgState { get; set; }
         public string? Parent { get; set; }
         public string? Url { get; set; }
+        public string? ImgLink { get; set; }
 
     }
 
@@ -46,6 +48,7 @@
         public string? ProcesCode { get; set; }
         public string? ProcesName { get; set; }
         public string? LinkProc { get; set; }
+        public string? ImgLink { get; set; }
         public List<MenuListProgram> MenuPrograms { get; set; }
     }
 
@@ -55,6 +58,7 @@
         public string? ProgCode { get; set; }
         public string? ProgName { get; set; }
         public string? LinkUrl { get; set; }
+        public string? ImgLink { get; set; }
     }
 
 }

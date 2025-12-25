@@ -5,16 +5,9 @@ using IMSWebApp.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Net;
-using System.Reflection.PortableExecutable;
-using System.Runtime.InteropServices;
-using System.Runtime.Intrinsics.X86;
 using System.Security.Claims;
 using System.Text;
-using System.Xml.Linq;
 
 namespace IMSWebApp.Controllers.MasterData
 {

@@ -1,6 +1,4 @@
 ﻿using IMSWebApp.Models;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using System.Security.Claims;
 
@@ -24,7 +22,7 @@ namespace IMSWebApp.Function
             }
             catch (Exception ex)
             {
-
+                
             }
             return userDetail;
         }

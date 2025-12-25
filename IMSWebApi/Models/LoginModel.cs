@@ -22,6 +22,7 @@ namespace IMSWebApi.Models
         public string? Images { get; set; }
         public string? Url { get; set; }
         public Int64 RightAuth { get; set; }
+        public string? ImgLink { get; set; }
     }
 
     public class MenuProces
@@ -30,6 +31,7 @@ namespace IMSWebApi.Models
         public string? ModulCode { get; set; }
         public string? ProcesCode { get; set; }
         public string? ProcesName { get; set; }
+        public string? ImgLink { get; set; }
     }
 
     public class MenuProgram
@@ -39,6 +41,7 @@ namespace IMSWebApi.Models
         public string? ProcesCode { get; set; }
         public string? ProgCode { get; set; }
         public string? ProgName { get; set; }
+        public string? ImgLink { get; set; }
     }
 
     public class MenuItem
@@ -51,6 +54,7 @@ namespace IMSWebApi.Models
         public Int64 ProgState { get; set; }
         public string? Parent { get; set; }
         public string? Url { get; set; }
+        public string? ImgLink { get; set; }
 
     }
 
@@ -60,6 +64,7 @@ namespace IMSWebApi.Models
         public string? ProcesCode { get; set; }
         public string? ProcesName { get; set; }
         public string? LinkProc { get; set; }
+        public string? ImgLink { get; set; }
         public List<MenuListProgram> MenuPrograms { get; set; } 
     }
 
@@ -69,6 +74,7 @@ namespace IMSWebApi.Models
         public string? ProgCode { get; set; }
         public string? ProgName { get; set; }
         public string? LinkUrl { get; set; }
+        public string? ImgLink { get; set; }
     }
 
 }

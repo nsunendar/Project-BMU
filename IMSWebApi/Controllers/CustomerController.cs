@@ -63,7 +63,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetDataCustomer");
+                return StatusCode(500, "Can't Load GetDataCustomer" + ex.Message);
             }
         }
 
@@ -112,7 +112,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load GetCustomerById");
+                return StatusCode(500, "Can't Load GetCustomerById" + ex.Message);
             }
         }
 
@@ -328,7 +328,7 @@ namespace IMSWebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Can't Load getCustType");
+                return StatusCode(500, "Can't Load getCustType" + ex.Message);
             }
         }
 
@@ -381,7 +381,7 @@ namespace IMSWebApi.Controllers
             catch (Exception ex)
             {
                 // Logging optional error message, change "Can't Load GetInvSubTypes" if necessary
-                return StatusCode(500, "Can't Load getCustSubType");
+                return StatusCode(500, "Can't Load getCustSubType" + ex.Message);
             }
         }
 
@@ -431,7 +431,7 @@ namespace IMSWebApi.Controllers
             catch (Exception ex)
             {
                 // Logging optional error message, change "Can't Load GetInvSubTypes" if necessary
-                return StatusCode(500, "Can't Load getCsArea");
+                return StatusCode(500, "Can't Load getCsArea" + ex.Message);
             }
         }
 
@@ -481,7 +481,7 @@ namespace IMSWebApi.Controllers
             catch (Exception ex)
             {
                 // Logging optional error message, change "Can't Load GetInvSubTypes" if necessary
-                return StatusCode(500, "Can't Load getCsSalesman");
+                return StatusCode(500, "Can't Load getCsSalesman" + ex.Message);
             }
         }
 
